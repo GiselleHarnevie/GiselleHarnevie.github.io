@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Giselle's Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!--  -->
+  <!-- HEADER -->
+  <!--  -->
+  <header class="header" id="header">
+
+    <nav id="desktop-nav">
+      <div class="logo" onclick="location.href='#top'">Giselle Harnevie</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <nav id="hamburger-nav">
+      <div class="logo" onclick="location.href='#to'"> Giselle Harnevie </div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+
+  <!-- PIXEL ART -->
+  <div class="character"></div>
+
+  <!--  -->
+  <!-- PROFILE -->
+  <!--  -->
+  <section id="profile">
+
+    <!-- <div class="profile-bg-details" aria-hidden="true"></div> -->
+
+    <div class="profile-scene">
+
+      <!-- Sitting img -->
+      <div class="profile-sprite-wrap">
+        <img src="./assets/Sprites/Umbrella.png" alt="umbrella" class="profile-umbrella" />
+        <div class="profile-sprite-anim"></div>
+      </div>
+
+      <!-- Info board -->
+      <div class="general-card">
+
+
+        <!-- info -->
+        <p class="section__text__p1"> Hello, I'm </p>
+        <h1 class="title profile-title"> Giselle </h1>
+        <p class="section__text__p2"> Gameplay Programmer + Game Designer </p>
+
+        <!-- info buttons -->
+        <div class="btn-container profile-buttons">
+
+          <a class="btn pixel-btn secondary" href="./assets/Resume.pdf"> Resume </a>
+          <a class="btn pixel-btn primary" href="#contact"> Contact </a>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!--  -->
+  <!-- ABOUT -->
+  <!--  -->
+  <section id="about" class="page-section">
+    <!-- Section title -->
+    <h1 class="title about-title">About Me</h1>
+
+    <!-- Main about wrapper -->
+    <!-- <div class="about-wrapper"> -->
+
+    <!-- Main text box -->
+    <div class="general-card">
+
+      <p class="general-text">
+        I’m a Swedish/Malaysian Digital Arts and Entertainment student
+        specialising in Game Development at Howest, Belgium, seeking an
+        internship in Gameplay Programming and Game Design. I enjoy
+        making and designing games, with a strong interest in building fun
+        and engaging experiences for players.
+      </p>
+      <p class="general-text">
+        Through long-term, short-term group projects and previous work
+        experience, I’ve developed teamwork, communication and
+        leadership skills. I am comfortable working with C++, C#, Unity,
+        Unreal Engine, custom engines and version control tools such as Git
+        and Perforce.
+      </p>
+      <p class="general-text">
+        I’m open to learning new languages, frameworks, and tools. I enjoy
+        taking on creative challenges
+      </p>
+
+    </div>
+
+    </div>
+
+  </section>
+
+
+
+
+
+  <section id="contact">
+
+    <h1 class="title contact-title">Contact</h1>
+    <div class="contact-card general-card">
+
+      <p class="contact-text">
+        I' looking for an internshippp
+      </p>
+
+      <p class="contact-subtext">
+        connect ? yes ? 
+      </p>
+
+
+      <div class="profile-socials">
+        <a class="social-pixel-btn" href="https://www.linkedin.com/in/giselleharnevie/"
+          aria-label="Open LinkedIn profile">
+          <img src="./assets/LinkedinIcon-cropped.svg" alt="" class="icon" />
+        </a>
+        <a class="social-pixel-btn" href="mailto:giselle.harnevie@gmail.com" aria-label="Send email to Giselle">
+          <img src="./assets/email-address-icon.svg" alt="" class="icon" />
+        </a>
+
+        <a class="social-pixel-btn" href="https://github.com/GiselleHarnevie" aria-label="Open GitHub profile">
+          <img src="./assets/GithubIcon.svg" alt="" class="icon" />
+        </a>
+
+        <a class="social-pixel-btn" href="https://gisellehar.itch.io" aria-label="Open Itch.io profile">
+          <img src="./assets/ItchIoIcon.svg" alt="" class="icon" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!--  -->
+  <!-- FOOTER -->
+  <!--  -->
+
+  <footer class="site-footer">
+    <p> 2026 Giselle Harnevie </p>
+    <p class="footer-credit">Pixel art by Kaja :D</p>
+  </footer>
+
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,774 @@
+/*  */
+/* FONTS */
+/*  */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jersey+25&display=swap");
+
+/*  */
+/* GENERAL */
+/*  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #f2f0e5;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  overscroll-behavior: none;
+  background-color: #f2f0e5;
+  color: #212123;
+}
+
+p {
+  color: #212123;
+}
+
+a {
+  color: #212123;
+  text-decoration: none;
+  transition: 250ms ease;
+}
+a:hover {
+  color: #c2d368;
+}
+
+section {
+  min-height: 50vh;
+  padding: 6rem 10rem;
+  background-color: #f2f0e5;
+}
+
+.title {
+  font-family: "Jersey 25", sans-serif;
+  font-size: 3.5rem;
+  text-align: center;
+}
+
+.home-section {
+  display: flex;
+}
+
+.page-section {
+  padding: 6rem 10rem;
+}
+
+.page-section__title {
+  color: #212123;
+}
+
+/*  */
+/* General Button*/
+/*  */
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  font-weight: 600;
+  padding: 1rem;
+  border-radius: 2rem;
+  transition: 300ms ease;
+}
+
+/*  */
+/* HEADER */
+/*  */
+/* Sticky Header */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 0 5px;
+  background-color: #8ab060;
+}
+
+/* Desktop nav */
+nav,
+.nav-links {
+  display: flex;
+}
+
+nav {
+  justify-content: space-around;
+  align-items: center;
+  height: 7.5vh;
+}
+
+.nav-links {
+  font-family: "Jersey 25";
+  gap: 2rem;
+  list-style: none;
+  font-size: 1.5rem;
+}
+
+.logo {
+  font-family: "Jersey 25";
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.logo:hover {
+  color: #c2d368;
+}
+
+/* Hamburger Menu */
+#hamburger-nav {
+  display: none;
+}
+
+.hamburger-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.hamburger-icon span {
+  width: 100%;
+  height: 2px;
+  background-color: #212123;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-links {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  font-family: "Jersey 25";
+  background-color: #f2f0e5;
+  width: fit-content;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.1s ease-in-out;
+}
+
+.menu-links.open {
+  max-height: 300px;
+}
+
+.menu-links li {
+  list-style: none;
+}
+
+.menu-links a {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #212123;
+  transition: all 0.1s ease-in-out;
+}
+
+.hamburger-icon.open span:first-child {
+  transform: rotate(45deg) translate(10px, 5px);
+}
+
+.hamburger-icon.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-icon.open span:last-child {
+  transform: rotate(-45deg) translate(10px, -5px);
+}
+
+.hamburger-icon span:first-child {
+  transform: none;
+}
+
+.hamburger-icon span:first-child {
+  opacity: 1;
+}
+
+.hamburger-icon span:first-child {
+  transform: none;
+}
+
+@media screen and (max-width: 1200px) {
+  #desktop-nav {
+    display: none;
+  }
+
+  #hamburger-nav {
+    display: flex;
+  }
+}
+
+/*  */
+/* Profile */
+/*  */
+#profile {
+  display: relative;
+  overflow: hidden;
+  min-height: 44vh;
+  height: auto;
+  margin: 0;
+  padding: 7rem 10rem 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(
+    #68c2d3 0%,
+    #68c2d3 48%,
+    #ede19e 48%,
+    #ede19e 100%
+  );
+}
+
+.profile-scene {
+  position: relative;
+  z-index: 1;
+  width: min(1100px, 100%);
+  display: grid;
+  grid-template-columns: 0.9fr 2.5fr;
+  align-items: end;
+  gap: 7rem;
+  transform: translateY(-2rem);
+}
+
+.profile-sprite-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  transform: translateY(-3.5rem);
+}
+
+.profile-sprite-anim {
+  --sprite-width: 160px;
+  --sprite-height: 160px;
+
+  width: var(--sprite-width);
+  height: var(--sprite-height);
+
+  background-image: url("./assets/Sprites/GigiSittingCropped.png");
+  background-repeat: no-repeat;
+  background-size: var(--sprite-width) calc(var(--sprite-height) * 2);
+  background-position: 0 0;
+  animation: sitting-idle 1.5s step-end infinite;
+  filter: drop-shadow(10px 12px 0 rgba(33, 33, 35, 0.22));
+}
+
+.profile-umbrella {
+  position: absolute;
+  transform: translate(-40%, -15%) rotate(-15deg);
+  width: 200px;
+  height: 200px;
+  z-index: -1;
+}
+
+@keyframes sitting-idle {
+  0%,
+  49.99% {
+    background-position: 0 0;
+  }
+  50%,
+  100% {
+    background-position: 0 calc(var(--sprite-height) * -1);
+  }
+}
+
+/*  */
+.section__text__p1 {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+
+.section__text__p2 {
+  color: #45444f;
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  margin-bottom: 1.4rem;
+}
+
+.profile-title {
+  color: #8ab060;
+  font-size: clamp(4rem, 8vw, 7rem);
+  line-height: 0.9;
+  margin-bottom: 0.6rem;
+  text-shadow: 4px 4px 0 #212123;
+  /* text-shadow: 4px 4px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000; */
+}
+
+/*  */
+
+.profile-buttons {
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.pixel-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  min-width: 8.5rem;
+  width: auto;
+
+  padding: 0.75rem 1.1rem;
+
+  font-family: "Jersey 25", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+
+  border: 4px solid #212123;
+  border-radius: 8px;
+
+  box-shadow: 0 5px 0 #212123;
+
+  text-decoration: none;
+  cursor: pointer;
+
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    background-color 160ms ease;
+}
+
+.pixel-btn:hover {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #212123;
+}
+
+.pixel-btn.primary {
+  background: #8ab060;
+  color: #212123;
+}
+
+.pixel-btn.secondary {
+  background: #f2f0e5;
+  color: #212123;
+}
+
+/*  */
+
+.profile-socials {
+  margin-top: 1.4rem;
+
+  display: flex;
+  justify-content: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.icon {
+  height: 2.5rem;
+  cursor: pointer;
+}
+
+.social-pixel-btn {
+  width: 5.1rem;
+  height: 4.1rem;
+
+  display: grid;
+  place-items: center;
+
+  background: #f2f0e5;
+
+  border: 4px solid #212123;
+  border-radius: 4px;
+
+  box-shadow: 0 4px 0 #212123;
+
+  text-decoration: none;
+  cursor: pointer;
+
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    background-color 160ms ease;
+}
+
+.social-pixel-btn:hover {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #212123;
+  background: #ede19e;
+}
+
+.social-pixel-btn .icon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+@media screen and (max-width: 1200px) {
+  #profile {
+    margin: 0;
+    padding: 11rem 1.5rem 3rem;
+    min-height: auto;
+  }
+
+  .profile-scene {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    justify-items: center;
+  }
+
+  .profile-board {
+    width: 100%;
+    max-width: 520px;
+    padding: 1rem;
+  }
+
+  .profile-title {
+    font-size: clamp(3.5rem, 16vw, 5.5rem);
+  }
+
+  .section__text__p2 {
+    font-size: 1.2rem;
+  }
+
+  .profile-buttons {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .pixel-btn {
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* .social-pixel-btn {
+    text-decoration: none;
+  } */
+
+  .profile-sprite-anim {
+    width: min(var(--sprite-width), 75vw);
+    height: min(var(--sprite-height), 75vw);
+
+    background-size: 100% 200%;
+  }
+}
+
+/*  */
+/* About */
+/*  */
+#about {
+  position: relative;
+  min-height: 40vh;
+  padding: 6rem 10rem;
+}
+
+.about-title {
+  margin-bottom: 2.5rem;
+  color: #212123;
+}
+
+.about-wrapper {
+  width: min(1000px, 100%);
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about-board {
+  padding: 2rem;
+
+  background: repeating-linear-gradient(
+    to bottom,
+    #e5ceb4 0px,
+    #e5ceb4 18px,
+    #d3a068 18px,
+    #d3a068 22px
+  );
+
+  border: 6px solid #80493a;
+  outline: 5px solid #212123;
+
+  border-radius: 0;
+
+  box-shadow: 10px 10px 0 rgba(33, 33, 35, 0.25);
+}
+
+.about-text {
+  color: #212123;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.about-text:last-child {
+  margin-bottom: 0;
+}
+
+.general-card {
+  padding: 1.5rem;
+
+  background: #f2f0e5;
+
+  border: 4px solid #212123;
+  border-radius: 0;
+
+  box-shadow: 6px 6px 0 #8ab060;
+
+  text-align: center;
+}
+
+.general-card h3 {
+  font-family: "Jersey 25", sans-serif;
+  font-size: 1.8rem;
+  color: #352b42;
+  margin-bottom: 0.75rem;
+}
+
+.general-card p {
+  color: #45444f;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.general-text {
+  font-size: 1.25rem;
+}
+
+@media screen and (max-width: 1200px) {
+  #about {
+    padding: 4rem 1.5rem;
+  }
+
+  .general-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .general-board {
+    padding: 1.5rem;
+  }
+
+  .general-text {
+    font-size: 1.25rem;
+  }
+}
+
+
+/*  */
+/* Pixel Art Walk */
+/*  */
+/*
+  Directional control concept from https://www.bram.us/2023/10/23/css-scroll-detection/#the-concept
+  Multi axis demo without the frills https://codepen.io/jbasoo/pen/NWoNvLx
+  Graphical assets from https://cupnooble.itch.io/sprout-lands-asset-pack and https://axulart.itch.io/small-8-direction-characters
+  credits to @jbasoo for scroll stuff
+*/
+
+/* Block */
+@property --scroll-block-position {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+@property --scroll-block-position-delayed {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+@property --scroll-block-direction {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+@keyframes adjust-block-pos {
+  to {
+    --scroll-block-position: 1;
+    --scroll-block-position-delayed: 1;
+  }
+}
+
+:root {
+  animation:
+    adjust-block-pos linear,
+    adjust-inline-pos linear;
+  animation-timeline: scroll(nearest block), scroll(nearest inline);
+}
+
+body {
+  /* Block */
+  transition:
+    --scroll-block-position-delayed 0.1s linear,
+    --scroll-inline-position-delayed 0.06s linear;
+  --scroll-block-velocity: calc(
+    var(--scroll-block-position) - var(--scroll-block-position-delayed)
+  );
+  --scroll-block-speed: max(
+    var(--scroll-block-velocity),
+    -1 * var(--scroll-block-velocity)
+  ); /* abs(var(--scroll-block-velocity)); */
+  --scroll-block-direction: calc(
+    var(--scroll-block-velocity) / var(--scroll-block-speed)
+  ); /* sign(var(--scroll-block-velocity)); */
+
+  --when-block-scrolling: abs(var(--scroll-block-direction));
+  --when-not-block-scrolling: abs(var(--when-scrolling) - 1);
+
+  --when-scrolling-up: min(
+    abs(var(--scroll-block-direction) - abs(var(--scroll-block-direction))),
+    1
+  );
+  --when-scrolling-down: min(
+    var(--scroll-block-direction) + abs(var(--scroll-block-direction)),
+    1
+  );
+
+  --when-scrolling-up-or-when-not-block-scrolling: clamp(
+    0,
+    abs(var(--scroll-block-direction) - 1),
+    1
+  );
+  --when-scrolling-down-or-when-not-block-scrolling: clamp(
+    0,
+    var(--scroll-block-direction) + 1,
+    1
+  );
+}
+
+.character {
+  position: fixed;
+  left: 10px;
+  bottom: 10px;
+  z-index: 3;
+  pointer-events: none;
+  place-items: end start;
+  display: grid;
+  transition: initial;
+
+  opacity: 0;
+  transform: translateY(12px);
+
+  transition:
+    opacity 350ms ease,
+    transform 350ms ease;
+
+  &:before {
+    content: "";
+    inline-size: 62px;
+    block-size: 64px;
+    display: block;
+    place-items: center;
+    background-image: url("./assets/Sprites/GigiSpriteCharacter.png");
+    background-repeat: no-repeat;
+    animation-duration: 0.35s;
+    animation-timing-function: steps(4);
+    animation-iteration-count: infinite;
+  }
+}
+
+.character.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.character::before {
+  content: "";
+
+  width: 62px;
+  height: 64px;
+
+  display: block;
+
+  background-image: url("./assets/Sprites/GigiSpriteCharacter.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+
+  image-rendering: pixelated;
+}
+
+@keyframes to-bottom {
+  from {
+    background-position: 0px 0px;
+  }
+  to {
+    background-position: -248px 0px;
+  }
+}
+
+@keyframes to-top {
+  from {
+    background-position: 0px -64px;
+  }
+  to {
+    background-position: -248px -64px;
+  }
+}
+
+/* To bottom */
+@container style(--scroll-block-direction: 1) {
+  .character:before {
+    animation-name: to-bottom;
+  }
+}
+
+/* To top */
+@container style(--scroll-block-direction: -1) {
+  .character:before {
+    animation-name: to-top;
+  }
+}
+
+
+/* Idle */
+@container style(--scroll-block-direction: 0) and style(--scroll-inline-direction: 0) {
+  .character:before {
+    background-position: 0px 0px;
+  }
+}
+
+
+/* FOOTER */
+.site-footer {
+  margin: 0;
+  padding: 1.4rem 1rem 1.8rem;
+  background: #8ab060;
+  border-top: 4px solid #212123;
+  text-align: center;
+}
+
+.site-footer p {
+  color: #212123;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.footer-credit {
+  margin-top: 0.25rem;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* Mobile spacing */
+@media screen and (max-width: 650px) {
+  .contact-section {
+    padding: 4rem 1rem 2.5rem;
+  }
+
+  .contact-card {
+    padding: 1.25rem;
+  }
+
+  .site-footer {
+    padding: 1.25rem 1rem 1.5rem;
+  }
+}
