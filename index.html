@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" id="portfolio">
 
 <head>
   <meta charset="UTF-8" />
@@ -9,13 +9,11 @@
 </head>
 
 <body>
-  <!--  -->
   <!-- HEADER -->
-  <!--  -->
   <header class="header" id="header">
 
     <nav id="desktop-nav">
-      <div class="logo" onclick="location.href='#top'">Giselle Harnevie</div>
+      <div class="logo" onclick="location.href='#portfolio'">Giselle Harnevie</div>
       <div>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
@@ -26,18 +24,18 @@
     </nav>
 
     <nav id="hamburger-nav">
-      <div class="logo" onclick="location.href='#to'"> Giselle Harnevie </div>
+      <div class="logo" onclick="location.href='#portfolio'"> Giselle Harnevie </div>
       <div class="hamburger-menu">
         <div class="hamburger-icon" onclick="toggleMenu()">
           <span></span>
           <span></span>
           <span></span>
         </div>
-        <div class="menu-links">
+        <ul class="menu-links">
           <li><a href="#about" onclick="toggleMenu()">About</a></li>
           <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
           <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </div>
+        </ul>
       </div>
     </nav>
 
@@ -46,111 +44,408 @@
   <!-- PIXEL ART -->
   <div class="character"></div>
 
-  <!--  -->
   <!-- PROFILE -->
-  <!--  -->
   <section id="profile">
-
-    <!-- <div class="profile-bg-details" aria-hidden="true"></div> -->
-
     <div class="profile-scene">
-
       <!-- Sitting img -->
       <div class="profile-sprite-wrap">
         <img src="./assets/Sprites/Umbrella.png" alt="umbrella" class="profile-umbrella" />
         <div class="profile-sprite-anim"></div>
       </div>
-
       <!-- Info board -->
       <div class="general-card">
-
-
         <!-- info -->
-        <p class="section__text__p1"> Hello, I'm </p>
+        <p class="text"> Hello, I'm </p>
         <h1 class="title profile-title"> Giselle </h1>
-        <p class="section__text__p2"> Gameplay Programmer + Game Designer </p>
+        <p class="text"> Gameplay Programmer + Game Designer </p>
 
         <!-- info buttons -->
         <div class="btn-container profile-buttons">
-
-          <a class="btn pixel-btn secondary" href="./assets/Resume.pdf"> Resume </a>
+          <a class="btn pixel-btn secondary" href="./assets/Resume.pdf" target="_blank" rel="noreferrer"> Resume </a>
           <a class="btn pixel-btn primary" href="#contact"> Contact </a>
-
         </div>
-
       </div>
     </div>
   </section>
 
-  <!--  -->
   <!-- ABOUT -->
-  <!--  -->
-  <section id="about" class="page-section">
+  <section id="about">
     <!-- Section title -->
-    <h1 class="title about-title">About Me</h1>
-
-    <!-- Main about wrapper -->
-    <!-- <div class="about-wrapper"> -->
+    <h1 class="title">About Me</h1>
 
     <!-- Main text box -->
     <div class="general-card">
 
-      <p class="general-text">
+      <p class="text">
         I’m a Swedish/Malaysian Digital Arts and Entertainment student
         specialising in Game Development at Howest, Belgium, seeking an
         internship in Gameplay Programming and Game Design. I enjoy
         making and designing games, with a strong interest in building fun
         and engaging experiences for players.
       </p>
-      <p class="general-text">
+      <p class="subtext">
         Through long-term, short-term group projects and previous work
         experience, I’ve developed teamwork, communication and
         leadership skills. I am comfortable working with C++, C#, Unity,
         Unreal Engine, custom engines and version control tools such as Git
         and Perforce.
       </p>
-      <p class="general-text">
+      <p class="text">
         I’m open to learning new languages, frameworks, and tools. I enjoy
-        taking on creative challenges
+        taking on creative challenges.
       </p>
-
-    </div>
 
     </div>
 
   </section>
 
 
+  <!-- Projects -->
+  <!-- TODO: Popup Modal instead -->
+  <section id="projects">
+    <h1 class="title">Projects</h1>
+
+    <div class="card-grid" id="cardGrid">
+      <!-- Card 1 -->
+      <button class="interactable-card general-card" type="button" aria-expanded="false" aria-controls="card-1-details">
+        <div class="card-thumbnail">
+          <video autoplay muted loop>
+            <source src="./assets/ProjectFigures/WokThisWay/CoverVidWokThisWay.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="card-body-wrapper">
+          <h3 class="title">Wok this Way</h3>
+          <p class="text">Intergalactic cooking arcade game made with Unity and an Arcade Machine donated by Elaut Group
+          </p>
+
+          <div class="tags-wrapper">
+            <span class="tag-red">Group</span>
+            <span class="tag">Unity</span>
+            <span class="tag">C#</span>
+            <span class="tag">Puzzled Arcade Machine Framework</span>
+          </div>
+
+          <div class="btn-place-end">
+            <span class="pixel-btn primary">See more</span>
+          </div>
+        </div>
+      </button>
+
+      <!-- Expanded panel Card 1 -->
+      <div class="expanded-panel" id="card-1-details" hidden>
+        <div class="expanded-panel__inner general-card">
+          <div class="expanded-panel__header">
+            <h3 class="title">Wok this Way</h3>
+            <div class="expanded-panel__links" style="margin-top: 0.9rem;">
+              <a class="pixel-btn primary" href="https://example.com" target="_blank" rel="noreferrer"> Gameplay
+                Video</a>
+              <a class="pixel-btn primary" href="https://example.com" target="_blank" rel="noreferrer">Trailer</a>
+              <button class="pixel-btn secondary expanded-panel-close" type="button"> Close </button>
+            </div>
+          </div>
+
+          <div class="expanded-panel__scroll">
+            <p><strong>Role:</strong> Programmer </p>
+            <p><strong>Team:</strong> 6</p>
+            <p><strong>Tech Stack:</strong> Unity, C#, Perforce, HacknPlan, Miro, Puzzled Arcade Machine Framework
+            </p>
+            <p style="margin-top: 0.75rem;">
+              What I did:
+            <ul style="margin-left: 1.25rem; margin-top: 0.5rem;">
+              <li> Understood and used the Puzzled Arcade Machine Framework </li>
+              <li> Designed and implemented the recipe and ingredient systems </li>
+              <li> Designed and implemented the ingredient selection phase </li>
+              <li> Rapid prototypes of machine button interaction inputs </li>
+              <li> Helped make button interface </li>
+              <li> Implemented all games sounds </li>
+              <li> Implemented game animations </li>
+              <li> Implemented game fx </li>
+              <li> Worked with artist on the how the animations would work from phase to phase </li>
+            </ul>
+            </p>
+          </div>
+        </div>
+      </div>
 
 
+
+      <!-- Card 2 -->
+      <button class="interactable-card general-card" type="button" aria-expanded="false" aria-controls="card-2-details">
+        <div class="card-thumbnail">
+          <video autoplay muted loop id="myVideo">
+            <source src="./assets/ProjectFigures/UtilityAi/CoverVideoUtilityAi.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="card-body-wrapper">
+          <h3 class="title">Utility Ai Survivor Agent in Zombie Apocalypse</h3>
+          <p class="text">Using Utility AI to make decisions for Ai Agent</p>
+
+
+          <div class="tags-wrapper">
+            <span class="tag-red">Solo</span>
+            <span class="tag">C++</span>
+            <span class="tag">Gameplay Programming Engine</span>
+          </div>
+
+          <div class="btn-place-end">
+            <span class="pixel-btn primary">See more</span>
+          </div>
+        </div>
+      </button>
+
+      <!-- Expanded panel Card 2 -->
+      <div class="expanded-panel" id="card-2-details" hidden>
+        <div class="expanded-panel__inner general-card">
+          <div class="expanded-panel__header">
+            <h3 class="title">Utility Ai Survivor Agent in Zombie Apocalypse</h3>
+            <div class="expanded-panel__links" style="margin-top: 0.9rem;">
+              <a class="pixel-btn primary" href="https://example.com" target="_blank" rel="noreferrer">Link To
+                Project</a>
+              <button class="pixel-btn secondary expanded-panel-close" type="button">
+                Close
+              </button>
+            </div>
+
+          </div>
+
+          <div class="expanded-panel__scroll">
+            <p><strong>Tech Stack:</strong> Visual Studio, C++, Gameplay Programming Engine, Git
+            </p>
+            <p style="margin-top: 0.75rem;">
+              What I did:
+            <ul style="margin-left: 1.25rem; margin-top: 0.5rem;">
+              <li> info.. </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <button class="interactable-card general-card" type="button" aria-expanded="false" aria-controls="card-3-details">
+        <div class="card-thumbnail">
+          <video autoplay muted loop id="myVideo2">
+            <source src="./assets/ProjectFigures/GnomeMansLand/CoverVidGnomeMansLand.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="card-body-wrapper">
+          <h3 class="title">Gnome Mans Land</h3>
+          <p class="text">Semester Long Team Project about Gnomes balancing a stretcher through a treacherous
+            forest</p>
+
+          <div class="tags-wrapper">
+            <span class="tag-red">Group</span>
+            <span class="tag">Unreal</span>
+            <span class="tag">C++</span>
+          </div>
+
+          <div class="btn-place-end">
+            <span class="pixel-btn primary">See more</span>
+          </div>
+        </div>
+      </button>
+
+      <!-- Expanded panel Card 3 -->
+      <div class="expanded-panel" id="card-3-details" hidden>
+        <div class="expanded-panel__inner general-card">
+          <div class="expanded-panel__header">
+            <h3 class="title">Gnome Mans Land</h3>
+            <div class="expanded-panel__links" style="margin-top: 0.9rem;">
+              <a class="pixel-btn primary" href="https://example.com" target="_blank" rel="noreferrer">Link to
+                Itch</a>
+              <a class="pixel-btn primary" href="https://example.com" target="_blank" rel="noreferrer">Trailer</a>
+              <button class="pixel-btn secondary expanded-panel-close" type="button">
+                Close
+              </button>
+            </div>
+          </div>
+
+          <div class="expanded-panel__scroll">
+            <p><strong>Role:</strong> Programmer</p>
+            <p><strong>Team:</strong> 5 (2 programmers + 2 artists + 1 sound programmer)</p>
+            <p><strong>Tech:</strong> Unreal Engine, C++, Hacknplan, Blueprints, Visual Studio, Miro, Perforce</p>
+
+            <p style="margin-top: 0.75rem;">
+              Gnome Mans Land info
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <button class="interactable-card general-card" type="button" aria-expanded="false" aria-controls="card-4-details">
+        <div class="card-thumbnail">
+          <video autoplay muted loop>
+            <source src="./assets/ProjectFigures/PPGA/CoverVidPPGA.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="card-body-wrapper">
+          <h3 class="title">Plane-based Projective Geometric Algebra project</h3>
+          <p class="text">A project made for a pioneering course on Plane based Projective Geometric Algebra
+          </p>
+
+          <div class="tags-wrapper">
+            <span class="tag-red">Solo</span>
+            <span class="tag">Fly Fish Engine</span>
+            <span class="tag">C++</span>
+          </div>
+
+          <div class="btn-place-end">
+            <span class="pixel-btn primary">See more</span>
+          </div>
+        </div>
+      </button>
+
+      <!-- Expanded panel Card 4 -->
+      <div class="expanded-panel" id="card-4-details" hidden>
+        <div class="expanded-panel__inner general-card">
+          <div class="expanded-panel__header">
+            <h3 class="title">Plane-based Projective Geometric Algebra project</h3>
+            <div class="expanded-panel__links" style="margin-top: 0.9rem;">
+              <a class="pixel-btn primary" href="https://example.com" target="_blank" rel="noreferrer">Link to
+                Project</a>
+              <button class="pixel-btn secondary expanded-panel-close" type="button">
+                Close
+              </button>
+            </div>
+          </div>
+
+          <div class="expanded-panel__scroll">
+            <p><strong>Tech Stack:</strong> Fly Fish Engine, C++, Visual Studio</p>
+
+            <p style="margin-top: 0.75rem;">
+              ppga info
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <button class="interactable-card general-card" type="button" aria-expanded="false" aria-controls="card-5-details">
+        <div class="card-thumbnail">
+          <video autoplay muted loop>
+            <source src="./assets/ProjectFigures/sciantology/CoverVidSciantology.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="card-body-wrapper">
+          <h3 class="title">Sci-ant-ology</h3>
+          <p class="text">A game made about converting faith in a 2.5 day game jam with a group of 5</p>
+
+          <div class="tags-wrapper">
+            <span class="tag-red">Group</span>
+            <span class="tag">Game Jam</span>
+            <span class="tag">Unity</span>
+            <span class="tag">C#</span>
+          </div>
+
+          <div class="btn-place-end">
+            <span class="pixel-btn primary">See more</span>
+          </div>
+        </div>
+      </button>
+
+      <!-- Expanded panel Card 5 -->
+      <div class="expanded-panel" id="card-5-details" hidden>
+        <div class="expanded-panel__inner general-card">
+          <div class="expanded-panel__header">
+            <h3 class="title">Sci-ant-ology</h3>
+            <div class="expanded-panel__links" style="margin-top: 0.9rem;">
+              <a class="pixel-btn primary" href="https://example.com" target="_blank" rel="noreferrer">LinkedIn Post</a>
+              <a class="pixel-btn primary" href="https://example.com" target="_blank" rel="noreferrer">Link to
+                Itch</a>
+              <a class="pixel-btn primary" href="https://example.com" target="_blank" rel="noreferrer">Link to
+                Project</a>
+              <button class="pixel-btn secondary expanded-panel-close" type="button">
+                Close
+              </button>
+            </div>
+          </div>
+
+          <div class="expanded-panel__scroll">
+            <p><strong>Role:</strong> Programmer</p>
+            <p><strong>Team:</strong> 5</p>
+            <p><strong>Tech Stack:</strong> Unity, C#, Figma, Github</p>
+
+            <p style="margin-top: 0.75rem;">
+              sciantology info
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <button class="interactable-card general-card" type="button" aria-expanded="false" aria-controls="card-6-details">
+        <div class="card-thumbnail">
+          <video autoplay muted loop>
+            <source src="./assets/ProjectFigures/MsPacman/CoverVidPacman.mp4" type="video/mp4">
+          </video>
+
+        </div>
+
+        <div class="card-body-wrapper">
+          <h3 class="title">Making Custom 2D Engine</h3>
+          <p class="text">Making a custom 2D game engine and using it to remake Ms Pacman</p>
+
+          <div class="tags-wrapper">
+            <span class="tag-red">Solo</span>
+            <span class="tag-red">IN PROGRESS</span>
+            <span class="tag">Custom 2D Engine</span>
+            <span class="tag">C++</span>
+          </div>
+
+          <div class="btn-place-end">
+            <span class="pixel-btn primary">See more</span>
+          </div>
+        </div>
+      </button>
+
+      <!-- Expanded panel Card 6 -->
+      <div class="expanded-panel" id="card-6-details" hidden>
+        <div class="expanded-panel__inner general-card">
+          <div class="expanded-panel__header">
+            <h3 class="title">Making Custom 2D Engine</h3>
+            <div class="expanded-panel__links" style="margin-top: 0.9rem;">
+              <a class="pixel-btn primary" href="https://example.com" target="_blank" rel="noreferrer">Link to
+                Project</a>
+              <button class="pixel-btn secondary expanded-panel-close" type="button">
+                Close
+              </button>
+            </div>
+          </div>
+
+          <div class="expanded-panel__scroll">
+            <p><strong>Tech Stack:</strong> Custom 2D Engine, C++, Visual Studio</p>
+
+            <p style="margin-top: 0.75rem;">
+              To be updated when project is complete.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
   <section id="contact">
-
-    <h1 class="title contact-title">Contact</h1>
-    <div class="contact-card general-card">
-
-      <p class="contact-text">
-        I' looking for an internshippp
-      </p>
-
-      <p class="contact-subtext">
-        connect ? yes ? 
-      </p>
-
+    <h1 class="title">Contact</h1>
+    <div class="general-card">
+      <p> Here are my contact details, i'd love to talk! </p>
 
       <div class="profile-socials">
+        <a class="social-pixel-btn" href="mailto:giselleharnevie@gmail.com" aria-label="Send email to Giselle">
+          <img src="./assets/email-address-icon.svg" alt="" class="icon" />
+        </a>
         <a class="social-pixel-btn" href="https://www.linkedin.com/in/giselleharnevie/"
           aria-label="Open LinkedIn profile">
           <img src="./assets/LinkedinIcon-cropped.svg" alt="" class="icon" />
         </a>
-        <a class="social-pixel-btn" href="mailto:giselle.harnevie@gmail.com" aria-label="Send email to Giselle">
-          <img src="./assets/email-address-icon.svg" alt="" class="icon" />
-        </a>
-
         <a class="social-pixel-btn" href="https://github.com/GiselleHarnevie" aria-label="Open GitHub profile">
           <img src="./assets/GithubIcon.svg" alt="" class="icon" />
         </a>
-
         <a class="social-pixel-btn" href="https://gisellehar.itch.io" aria-label="Open Itch.io profile">
           <img src="./assets/ItchIoIcon.svg" alt="" class="icon" />
         </a>
@@ -158,16 +453,11 @@
     </div>
   </section>
 
-
-  <!--  -->
   <!-- FOOTER -->
-  <!--  -->
-
   <footer class="site-footer">
     <p> 2026 Giselle Harnevie </p>
     <p class="footer-credit">Pixel art by Kaja :D</p>
   </footer>
-
 
   <!-- JS -->
   <script src="script.js"></script>

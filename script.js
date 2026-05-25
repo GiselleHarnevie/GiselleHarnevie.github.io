@@ -1,12 +1,10 @@
-function toggleMenu()
-{
-    const menu= document.querySelector(".menu-links")
-    const icon= document.querySelector(".hamburger-icon")
-    
-    menu.classList.toggle("open");
-    icon.classList.toggle("open");
-}
+function toggleMenu() {
+  const menu = document.querySelector(".menu-links");
+  const icon = document.querySelector(".hamburger-icon");
 
+  menu.classList.toggle("open");
+  icon.classList.toggle("open");
+}
 
 const character = document.querySelector(".character");
 const profileSection = document.querySelector("#profile");
@@ -24,30 +22,45 @@ function toggleCharacterVisibility() {
 window.addEventListener("scroll", toggleCharacterVisibility);
 window.addEventListener("load", toggleCharacterVisibility);
 
-
 (() => {
-  const grid = document.getElementById("sampleGrid");
+  const grid = document.getElementById("cardGrid");
   if (!grid) return;
 
+  let lastOpenedCard = null;
+
+  function scrollWithHeaderOffset(el) {
+    const header = document.querySelector(".header");
+    const headerH = header ? header.getBoundingClientRect().height : 0;
+    const y = el.getBoundingClientRect().top + window.pageYOffset - headerH - 8; // extra 8px gap
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }
+
   function closeAll() {
-    grid.querySelectorAll(".sample-expand:not([hidden])").forEach(panel => {
+    grid.querySelectorAll(".expanded-panel:not([hidden])").forEach((panel) => {
       panel.hidden = true;
     });
 
-    grid.querySelectorAll(".sample-card[aria-expanded='true']").forEach(card => {
-      card.setAttribute("aria-expanded", "false");
-    });
+    grid
+      .querySelectorAll(".interactable-card[aria-expanded='true']")
+      .forEach((card) => {
+        card.setAttribute("aria-expanded", "false");
+      });
   }
 
-  grid.addEventListener("click", (e) => {
-    // Close button inside expanded panel
-    if (e.target.closest(".sample-expand-close")) {
+  
+grid.addEventListener("click", (e) => {
+    if (e.target.closest(".expanded-panel-close")) {
       closeAll();
+
+      if (lastOpenedCard) {
+        scrollWithHeaderOffset(lastOpenedCard);
+      }
       return;
     }
 
+
     // Clicked a card?
-    const card = e.target.closest(".sample-card");
+    const card = e.target.closest(".interactable-card");
     if (!card) return;
 
     const panelId = card.getAttribute("aria-controls");
@@ -59,30 +72,39 @@ window.addEventListener("load", toggleCharacterVisibility);
     closeAll();
 
     if (!isOpen) {
+      lastOpenedCard = card;
       card.setAttribute("aria-expanded", "true");
+
       panel.hidden = false;
-      panel.scrollIntoView({ behavior: "smooth", block: "start" });
+
+      scrollWithHeaderOffset(panel);
     }
   });
 })();
 
-// video play please
-const videos = document.querySelectorAll("video")
+//w3 modal
+// Get the modal
+var modal = document.getElementById("myModal");
 
-videos.forEach(video => {
-  video.addEventListener("mouseover", function () {
-    this.play()
-  })
-  
-  video.addEventListener("mouseout", function () {
-    this.pause()
-  })
-  
-  video.addEventListener("touchstart", function () {
-    this.play()
-  })
-  
-  video.addEventListener("touchend", function () {
-    this.pause()
-  })
-})
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function () {
+  modal.style.display = "block";
+};
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+  modal.style.display = "none";
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
