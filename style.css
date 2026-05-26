@@ -149,13 +149,19 @@ li {
 }
 
 .general-card .text {
+  margin-top: 0.2rem;
   font-size: 1.25rem;
-  color: #4b4a59;
+  color: #212123;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .general-card .subtext {
+  margin-top: 0.2rem;
   font-size: 1.25rem;
-  color: #373085;
+  color: #212123;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .card-body-wrapper {
