@@ -32,7 +32,7 @@ a:hover {
   color: #c2d368;
 }
 section {
-  min-height: 50vh;
+  min-height: 40vh;
   padding: 6rem 10rem;
   background-color: #f2f0e5;
 }
@@ -150,7 +150,7 @@ li {
 
 .general-card .text {
   margin-top: 0.2rem;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   color: #212123;
   margin-left: 1rem;
   margin-right: 1rem;
@@ -158,7 +158,14 @@ li {
 
 .general-card .subtext {
   margin-top: 0.2rem;
-  font-size: 1.25rem;
+  font-size: 1.4rem;
+  color: #212123;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.general-card li{
+  font-size: 1.3rem;
   color: #212123;
   margin-left: 1rem;
   margin-right: 1rem;
@@ -196,7 +203,7 @@ li {
 
 .general-card p {
   color: #45444f;
-  font-size: 1.25rem;
+  font-size: 1.45rem;
   line-height: 1.5;
   font-weight: 500;
   letter-spacing: 0.05em;
