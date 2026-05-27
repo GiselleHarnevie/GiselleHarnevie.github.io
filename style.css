@@ -405,7 +405,7 @@ nav {
 
   .profile-scene {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 0.5rem;
     justify-items: center;
   }
 
@@ -432,11 +432,7 @@ nav {
     align-items: center;
   }
 
-  .profile-sprite-anim {
-    width: min(var(--sprite-width), 75vw);
-    height: min(var(--sprite-height), 75vw);
-    background-size: 100% 200%;
-  }
+  
 }
 
 /* About */
@@ -457,13 +453,13 @@ nav {
   .general-board {
     padding: 1.5rem;
   }
-
-  .general-text {
-    font-size: 1.25rem;
-  }
 }
 
 /* PROJECTS */
+#projects {
+  padding: 6rem 10rem;
+}
+
 .card-grid {
   /* change to make cards bigger */
   width: min(1300px, 100%);
@@ -527,7 +523,14 @@ nav {
   box-shadow: none;
 }
 
-/* Important: scroll inside panel */
+div.scroll-container {
+  overflow: auto;
+  white-space: nowrap;
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.35rem;
+}
+
 .expanded-panel__scroll {
   max-height: 70vh; /* tweak: 30–50vh */
   overflow: auto;
@@ -540,14 +543,7 @@ nav {
 
 .expanded-panel__scroll::-webkit-scrollbar-thumb {
   background: #8ab060;
-  /* border: 3px solid #f2f0e5; */
-}
-
-div.scroll-container {
-  overflow: auto;
-  white-space: nowrap;
-  margin-top: 1rem;
-  display: flex;
+  border: 2px solid #212123;
 }
 
 div.scroll-container::-webkit-scrollbar {
@@ -556,7 +552,7 @@ div.scroll-container::-webkit-scrollbar {
 
 div.scroll-container::-webkit-scrollbar-thumb {
   background: #8ab060;
-  /* border: 2px solid #8ab060; */
+  border: 2px solid #212123;
 }
 
 div.scroll-container video {
@@ -573,15 +569,124 @@ div.scroll-container img {
   margin: 0.35rem;
 }
 
-.expanded-panel__scroll img{
+.expanded-panel__scroll img {
   max-width: 580px;
   max-height: 520px;
-
 }
 
 @media (max-width: 1100px) {
+  section {
+    padding: 4rem 1rem;
+  }
+
+  #projects {
+    padding: 2rem 1rem;
+  }
+
   .card-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .general-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .general-card .text {
+    font-size: 1.2rem;
+    margin-left: 0.1rem;
+    margin-right: 0.1rem;
+  }
+
+  .general-card .subtext {
+    font-size: 1.1rem;
+    margin-left: 0.1rem;
+    margin-right: 0.1rem;
+  }
+
+  .general-card li {
+    font-size: 1.1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .general-card p {
+    font-size: 1.2rem;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .pixel-btn {
+    font-size: 1rem;
+    padding: 0.6rem 0.9rem;
+    min-width: 7rem;
+    border: 3px solid #212123;
+    box-shadow: 0 4px 0 #212123;
+  }
+
+  .pixel-btn:hover {
+    box-shadow: 0 2px 0 #212123;
+  }
+
+  .tags-wrapper {
+    gap: 0.3rem;
+  }
+
+  .tag,
+  .tag-red {
+    font-size: 0.95rem;
+    padding: 0.2rem 0.45rem;
+    border: 2px solid #212123;
+    /* box-shadow: 2px 2px 0 #8ab060; */
+  }
+
+  .tag-red {
+    box-shadow: 2px 2px 0 #b06060;
+  }
+
+  .expanded-panel__inner {
+    padding: 1rem;
+  }
+
+  .expanded-panel__header {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .expanded-panel__links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .expanded-panel__links .pixel-btn {
+    width: 100%;
+  }
+
+  .expanded-panel__scroll {
+    max-height: 50vh;
+    padding-right: 0.1rem;
+  }
+
+  .expanded-panel__scroll img {
+    max-width: 100%;
+    max-height: 300px;
+    margin: 0.5rem 0;
+  }
+
+  div.scroll-container video {
+    max-width: 100%;
+    max-height: 250px;
+    margin: 0.25rem;
+  }
+
+  div.scroll-container img {
+    max-width: 100%;
+    max-height: 250px;
+    margin: 0.25rem;
   }
 }
 
@@ -589,6 +694,12 @@ div.scroll-container img {
 #contact {
   min-height: 50vh;
   padding: 7rem 30rem;
+}
+
+@media screen and (max-width: 1100px) {
+  #contact {
+    padding: 1.25rem 1rem 1.5rem;
+  }
 }
 
 /* FOOTER */
@@ -614,7 +725,7 @@ div.scroll-container img {
 }
 
 /* Mobile spacing */
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 1100px) {
   .site-footer {
     padding: 1.25rem 1rem 1.5rem;
   }
@@ -822,4 +933,11 @@ body {
   100% {
     background-position: 0 calc(var(--sprite-height) * -1);
   }
+}
+
+@media screen and (max-width: 1100px) {
+  /* .profile-sprite-anim {
+    --sprite-width: 110px;
+    --sprite-height: 110px;
+  } */
 }
