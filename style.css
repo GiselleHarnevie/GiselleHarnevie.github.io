@@ -77,10 +77,6 @@ li {
     background-color 160ms ease;
 }
 
-.pixel-btn:hover {
-  transform: translateY(3px);
-  box-shadow: 0 2px 0 #212123;
-}
 
 .pixel-btn.primary {
   background: #8ab060;
@@ -91,6 +87,13 @@ li {
   background: #f2f0e5;
   color: #212123;
 }
+
+.pixel-btn:hover {
+  background: #ede19e;
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #212123;
+}
+
 
 .social-pixel-btn {
   width: 5.1rem;
